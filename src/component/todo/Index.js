@@ -6,8 +6,20 @@ class Index extends Component {
     render() {
         return (
             <div className='Todo-App'>
-                <TodoForm handleInputChange={this.props.handleInputChange} currentTodo={this.props.currentTodo}/>
-                <TodoList todos={this.props.todos}/>
+                {this.props.error &&
+                <span className='error'>{this.props.error}</span>}
+                <TodoForm
+                    handleInputChange={this.props.handleInputChange}
+                    currentTodo={this.props.currentTodo}
+                    handleSubmit={this.props.handleSubmit}
+
+                />
+                <TodoList
+                    handleRemove={this.props.handleRemove}
+
+                    handleToggle={this.props.handleToggle}
+                    todos={this.props.todos}
+                />
             </div>
         );
     }

@@ -5,7 +5,10 @@ class TodoList extends Component {
         return (
             <div className='Todo-list'>
                 <ul>
-                    {this.props.todos.map(todo => <TodoItem key={todo.id} todo={todo}/>)}
+                    {this.props.todos.map(todo => <TodoItem key={todo.id}
+                                                            handleRemove={this.props.handleRemove}
+                                                            handleToggle={this.props.handleToggle}
+                                                            todo={todo}/>)}
                 </ul>
             </div>
 
